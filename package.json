@@ -1,0 +1,27 @@
+{
+  "name": "intro-to-backend",
+  "version": "1.0.0",
+  "description": "my first time learning backend",
+  "homepage": "https://github.com/Sipalingwicak/intro-to-backend#readme",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Sipalingwicak/intro-to-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sipalingwicak/intro-to-backend.git"
+  },
+  "license": "ISC",
+  "author": "Supriyanto Agung Wicaksono",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/src/index.js",
+    "dev": "nodemon backend/src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5",
+    "nodemon": "^3.1.11"
+  }
+}
