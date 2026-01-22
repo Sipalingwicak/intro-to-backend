@@ -1,6 +1,6 @@
-import User from "../models.user.models.js"
+import { User } from "../models/user.models.js";
 
-const registeredUser = async (req, res) => {
+const registerUser = async (req, res) => {
     try {
         const { username, password, email} = req.body;
 
@@ -30,10 +30,10 @@ const registeredUser = async (req, res) => {
             user: {id: user._id, email: user.email, username: user.username}
         });
     } catch (error) {
-        res.statyus(500).json({message: "Internal Server Error", error: error.message})
+        res.status(500).json({message: "Internal Server Error", error: error.message})
     }
 }
 
 export {
-    registeredUser
+    registerUser
 }
