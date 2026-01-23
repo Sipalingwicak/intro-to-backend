@@ -36,4 +36,36 @@ const getPosts = async (req, res) => {
   }
 };
 
-export { createPost, getPosts };
+const updatePost = async (req, res) => {
+  try {
+    // basic validasi
+
+    //
+    if (Object.keys(req.body).length === 0) {
+      return res.status(400).json({
+        message: "No data provided for update",
+      });
+    }
+
+    const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+
+    if (!post)
+      return res.status(404).json({
+        message: "Post not found",
+      });
+
+    res.status(202).json({
+      message: "Post successfully updated!!",
+      post,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Internal Server Error",
+      error,
+    });
+  }
+};
+
+export { createPost, getPosts, updatePost };
