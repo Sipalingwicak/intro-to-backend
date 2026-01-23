@@ -1,4 +1,4 @@
-import { Post } from "../models/post.model";
+import { Post } from "../models/post.model.js";
 
 //create a post
 const createPost = async (req, res) => {
@@ -14,10 +14,12 @@ const createPost = async (req, res) => {
 
     res.status(200).json({
       message: "Post created sucessfully",
+      post,
     });
   } catch (error) {
     res.status(400).json({
       message: "Internal Server Error",
+      error,
     });
   }
 };
